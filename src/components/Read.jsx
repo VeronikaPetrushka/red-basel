@@ -23,7 +23,7 @@ const Read = ({ place }) => {
 
                 {place.date && <Text style={styles.subTitle}>Visited - {place.date}</Text>}
 
-                <ScrollView style={{width: '100%', paddingHorizontal: 35}}>
+                {/* <ScrollView style={{width: '100%', paddingHorizontal: 35}}> */}
                     {place.description && <Text style={[styles.desc, {marginBottom: 12}]}>{place.description}</Text>}
                     {place.comment && <Text style={[styles.desc, {marginBottom: 12}]}>{place.comment}</Text>}
 
@@ -42,7 +42,7 @@ const Read = ({ place }) => {
                             </>
                         )
                     }
-                </ScrollView>
+                {/* </ScrollView> */}
 
             </View>
         </LinearGradient>
