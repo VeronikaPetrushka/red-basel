@@ -80,7 +80,7 @@ const Home = () => {
 
                 <Text style={[styles.subTitle, {textAlign: 'right'}]}>Map</Text>
 
-                <View style={{width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 25}}>
+                <View style={{width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 25, zIndex: 10}}>
                     <TouchableOpacity 
                         style={[styles.typeBtn, type === 'plan' && {backgroundColor: '#fff'}]} 
                         onPress={() => setType('plan')}
@@ -111,7 +111,11 @@ const Home = () => {
 
                             <Image source={require('../assets/decor/left-guy.png')} style={styles.guyImg} />
 
-                            <TouchableOpacity style={styles.noCreateBtn} onPress={() => navigation.navigate('CreateHikeScreen')}>
+                            <TouchableOpacity 
+                                style={[styles.noCreateBtn, 
+                                { bottom: height > 700 ? height * 0.28 : height * 0.17}]} 
+                                onPress={() => navigation.navigate('CreateHikeScreen')}
+                                >
                                 <Text style={styles.createBtnText}>Create</Text>
                             </TouchableOpacity>
                         </View>
@@ -120,7 +124,7 @@ const Home = () => {
 
                 {
                     items.length > 0 && (
-                        <ScrollView style={{width: '100%', marginTop: 30}}>
+                        <ScrollView style={{width: '100%', marginTop: height * 0.03}}>
                             {items.map((item, index) => {
                             const hikeDate = new Date(item.date);
                             const hikeTime = new Date(item.time);
@@ -156,9 +160,9 @@ const Home = () => {
                         <Text style={styles.title}>Hello, dear user!</Text>
                         <Text style={[styles.title, {textDecorationLine: 'underline', alignSelf: 'flex-end'}]}>My name is Martin.</Text>
                         <Image source={require('../assets/decor/big-guy.png')} style={{width: '100%', height: '100%', resizeMode: 'contain', position: 'absolute'}} />
-                        <Text style={[styles.title, {position: 'absolute', top: height - 240, alignSelf: 'center'}]}>I'm your guide to the app</Text>
+                        <Text style={[styles.title, {position: 'absolute', top: height - height * 0.24, alignSelf: 'center'}]}>I'm your guide to the app</Text>
                         <TouchableOpacity onPress={() => setModalVisible(false)}>
-                            <Image source={require('../assets/decor/big-arrow.png')} style={{width: 102, height: 50, resizeMode: 'contain', position: 'absolute', top: height - 280, alignSelf: 'center'}} />
+                            <Image source={require('../assets/decor/big-arrow.png')} style={{width: 102, height: 50, resizeMode: 'contain', position: 'absolute', top: height - height * 0.35, alignSelf: 'center'}} />
                         </TouchableOpacity>
                     </View>
                 </Modal>
@@ -181,7 +185,8 @@ const styles = StyleSheet.create({
         fontSize: 24,
         color: '#fff',
         marginBottom: height * 0.03,
-        lineHeight: 26
+        lineHeight: 26,
+        zIndex: 10
     },
 
     subTitle: {
@@ -214,7 +219,8 @@ const styles = StyleSheet.create({
         color: '#fff',
         marginBottom: height * 0.02,
         lineHeight: 21,
-        opacity: 0.6
+        opacity: 0.6,
+        zIndex: 10
     },
 
     guyImg: {
@@ -222,7 +228,8 @@ const styles = StyleSheet.create({
         height: height * 0.6,
         position: 'absolute',
         top: -100,
-        left: -35
+        left: -35,
+        zIndex: 1
     },
 
     createBtn: {
@@ -242,8 +249,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderRadius: 12,
         position: 'absolute', 
-        bottom: height * 0.28,
-        right: 30
+        // bottom: height * 0.18,
+        right: 30,
+        zIndex: 10
     },
 
     createBtnText: {

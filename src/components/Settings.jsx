@@ -1,20 +1,18 @@
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Linking } from "react-native"
 import LinearGradient from "react-native-linear-gradient";
-import { useNavigation } from "@react-navigation/native";
 import Icons from "./Icons";
 
 const { height } = Dimensions.get('window');
 
 const Settings = () => {
-    const navigation = useNavigation();
 
     const openTerms = () => {
-        const url = "https://www.yourprivacypolicy.com"; // change
+        const url = "https://www.termsfeed.com/live/4adf32db-c1a2-4aff-afe8-05665a149d11";
         Linking.openURL(url).catch((err) => console.error("Failed to open URL", err));
     };
 
     const rateApp = () => {
-        const appStoreUrl = "itms-apps://itunes.apple.com/app/idYOUR_APP_ID?action=write-review"; // change
+        const appStoreUrl = "https://apps.apple.com/us/app/red-basel/id6742760266";
         Linking.openURL(appStoreUrl).catch((err) => console.error("Failed to open URL", err));
     };    
 

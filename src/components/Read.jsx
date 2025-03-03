@@ -12,7 +12,7 @@ const Read = ({ place }) => {
             <View style={styles.container}>
 
                 <View style={{width: '100%', borderBottomLeftRadius: 24, borderBottomRightRadius: 24, overflow: 'hidden', marginBottom: 29}}>
-                    <Image source={place.image} style={styles.image} />
+                    <Image source={typeof place.image === "string" ? { uri: place.image } : place.image} style={styles.image} />
                     <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack('')}>
                         <Text style={styles.backBtnText}>Back</Text>
                     </TouchableOpacity>
@@ -21,16 +21,26 @@ const Read = ({ place }) => {
                     </View>
                 </View>
 
+                {place.date && <Text style={styles.subTitle}>Visited - {place.date}</Text>}
+
                 <ScrollView style={{width: '100%', paddingHorizontal: 35}}>
-                    <Text style={[styles.desc, {marginBottom: 12}]}>{place.description}</Text>
-                    <Text style={styles.subTitle}>History</Text>
+                    {place.description && <Text style={[styles.desc, {marginBottom: 12}]}>{place.description}</Text>}
+                    {place.comment && <Text style={[styles.desc, {marginBottom: 12}]}>{place.comment}</Text>}
+
                     {
-                        place.context.map((item, index) => (
-                            <View key={index} style={{width: '100%', marginBottom: 20}}>
-                                <Text style={styles.subTitle}>{item.title}</Text>
-                                <Text style={styles.desc}>{item.text}</Text>
-                            </View>
-                        ))
+                        place.context && (
+                            <>
+                                <Text style={styles.subTitle}>History</Text>
+                                {
+                                    place.context.map((item, index) => (
+                                        <View key={index} style={{width: '100%', marginBottom: 20}}>
+                                            <Text style={styles.subTitle}>{item.title}</Text>
+                                            <Text style={styles.desc}>{item.text}</Text>
+                                        </View>
+                                    ))
+                                }
+                            </>
+                        )
                     }
                 </ScrollView>
 

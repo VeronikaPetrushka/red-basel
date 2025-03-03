@@ -34,7 +34,7 @@ const CreateHike = () => {
     
         try {
             const response = await fetch(
-                `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
+                `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json&accept-language=en`
             );
             const data = await response.json();
     
@@ -206,6 +206,8 @@ const CreateHike = () => {
                                     >
                                     <Text style={styles.nextBtnText}>Next</Text>
                                 </TouchableOpacity>
+
+                                <View style={{height: 50}} />
                             </ScrollView>
                         </>
                     )
@@ -260,7 +262,7 @@ const styles = StyleSheet.create({
         width: '100%',
         padding: 14,
         borderRadius: 12,
-        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+        backgroundColor: 'rgba(255, 255, 255, 0.2)',
         color: '#fff',
         fontSize: 15,
         fontWeight: '600',
@@ -271,7 +273,7 @@ const styles = StyleSheet.create({
         width: '100%',
         padding: 14,
         borderRadius: 12,
-        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+        backgroundColor: 'rgba(255, 255, 255, 0.2)',
         alignItems: 'center',
         justifyContent: 'center',
         marginBottom: 20

@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useCallback } from "react"
 import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, ScrollView , Modal} from "react-native"
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import LinearGradient from "react-native-linear-gradient";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import places from "../constants/places";
 
 const { height } = Dimensions.get('window');
@@ -9,6 +10,24 @@ const { height } = Dimensions.get('window');
 const Places = () => {
     const navigation = useNavigation();
     const [modalVisible, setModalVisible] = useState(false);
+    const [completedQuests, setCompletedQuests] = useState([]);
+
+    const loadCompletedQuests = async () => {
+        try {
+            const storedData = await AsyncStorage.getItem("completedQuest");
+            if (storedData) {
+                setCompletedQuests(JSON.parse(storedData));
+            }
+        } catch (error) {
+            console.error("Error retrieving completed quests:", error);
+        }
+    };
+
+    useFocusEffect(
+        useCallback(() => {
+            loadCompletedQuests();
+        }, [])
+    );
 
     useEffect(() => {
         setModalVisible(true);
@@ -27,6 +46,18 @@ const Places = () => {
                                 <Image source={place.image} style={styles.cardImage} />
                                 <Text style={styles.cardName}>{place.name}</Text>
                                 <Text style={styles.cardDesc} numberOfLines={1} ellipsizeMode="tail">{place.description}</Text>
+                                <TouchableOpacity onPress={() => navigation.navigate('ReadScreen' , {place: place})}>
+                                    <Text style={styles.cardBtn}>Read more</Text>
+                                </TouchableOpacity>
+                            </View>
+                        ))
+                    }
+                    {
+                        completedQuests.map((place, index) => (
+                            <View key={index} style={styles.card}>
+                                <Image source={{uri: place.image}} style={styles.cardImage} />
+                                <Text style={styles.cardName}>{place.name}</Text>
+                                <Text style={styles.cardDesc} numberOfLines={1} ellipsizeMode="tail">{place.comment}</Text>
                                 <TouchableOpacity onPress={() => navigation.navigate('ReadScreen' , {place: place})}>
                                     <Text style={styles.cardBtn}>Read more</Text>
                                 </TouchableOpacity>

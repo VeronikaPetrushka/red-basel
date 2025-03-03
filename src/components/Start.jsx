@@ -21,7 +21,7 @@ const Start = () => {
         <LinearGradient colors={["#000", "#300202"]} style={{width: '100%', height: '100%'}}>
             <View style={styles.container}>
 
-                <View style={{width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
+                <View style={{width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', zIndex: 10}}>
                     <Image source={require('../assets/decor/logo.png')} style={{width: 144, height: 40, resizeMode: 'contain'}} />
                     <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}>
                         <Text style={styles.skipText}>S k i p</Text>
