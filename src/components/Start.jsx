@@ -22,7 +22,7 @@ const Start = () => {
             <View style={styles.container}>
 
                 {
-                    index === 3 ? (
+                    index > 2 ? (
                         <View style={{width: '100%', flexGrow: 1}}>
                             <Text style={[styles.title, {marginLeft: -150}]}>Hello, dear user!</Text>
                             <Text style={[styles.title, {marginRight: -100, textDecorationLine: 'underline'}]}>My name is Martin.</Text>

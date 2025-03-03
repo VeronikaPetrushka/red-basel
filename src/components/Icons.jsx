@@ -23,6 +23,9 @@ const Icons = ({ type, active }) => {
       imageSource = require('../assets/routes/4.png');
       active && iconStyle.push(styles.active);
       break;
+    case 'arrow':
+      imageSource = require('../assets/icons/arrow.png');
+      break;
   }
 
   return (
