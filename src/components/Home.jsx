@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, ScrollView } from "react-native"
+import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, ScrollView, Modal } from "react-native"
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import LinearGradient from "react-native-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
@@ -18,6 +18,12 @@ const Home = () => {
         latitudeDelta: 0.05,
         longitudeDelta: 0.05,
     });
+
+    const [modalVisible, setModalVisible] = useState(false);
+
+    useEffect(() => {
+        setModalVisible(true);
+    }, []);
 
     useEffect(() => {
         const fetchHikes = async () => {
@@ -140,6 +146,23 @@ const Home = () => {
                     )
                 }
 
+                <Modal
+                    visible={modalVisible}
+                    transparent
+                    animationType="fade"
+                    onRequestClose={() => setModalVisible(false)}
+                >
+                    <View style={styles.modalContainer}>
+                        <Text style={styles.title}>Hello, dear user!</Text>
+                        <Text style={[styles.title, {textDecorationLine: 'underline', alignSelf: 'flex-end'}]}>My name is Martin.</Text>
+                        <Image source={require('../assets/decor/big-guy.png')} style={{width: '100%', height: '100%', resizeMode: 'contain', position: 'absolute'}} />
+                        <Text style={[styles.title, {position: 'absolute', top: height - 240, alignSelf: 'center'}]}>I'm your guide to the app</Text>
+                        <TouchableOpacity onPress={() => setModalVisible(false)}>
+                            <Image source={require('../assets/decor/big-arrow.png')} style={{width: 102, height: 50, resizeMode: 'contain', position: 'absolute', top: height - 280, alignSelf: 'center'}} />
+                        </TouchableOpacity>
+                    </View>
+                </Modal>
+
             </View>
         </LinearGradient>
     )
@@ -196,8 +219,9 @@ const styles = StyleSheet.create({
 
     guyImg: {
         width: 600,
-        height: height * 0.65,
+        height: height * 0.6,
         position: 'absolute',
+        top: -100,
         left: -35
     },
 
@@ -265,7 +289,14 @@ const styles = StyleSheet.create({
         lineHeight: 21,
         opacity: 0.6,
         textAlign: 'justify'
-    }
+    },
+
+    modalContainer: {
+        flex: 1,
+        paddingTop: height * 0.07,
+        paddingHorizontal: 35,
+        backgroundColor: "rgba(0, 0, 0, 0.95)"
+    },
 
 })
 
