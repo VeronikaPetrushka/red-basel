@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { View, Image, Animated } from 'react-native';
 import LinearGradient from "react-native-linear-gradient";
 import { enableScreens } from 'react-native-screens';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import StartScreen from './src/screens/StartScreen';
+import InfoScreen from './src/screens/InfoScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import CreateHikeScreen from './src/screens/CreateHikeScreen';
 import PlacesScreen from './src/screens/PlacesScreen';
@@ -27,7 +27,7 @@ const SplashScreen = ({ navigation }) => {
               duration: 5000,
               useNativeDriver: false,
           }).start(() => {
-              navigation.replace('StartScreen');
+              navigation.replace('InfoScreen');
           });
       }, []);
   
@@ -57,8 +57,8 @@ const App = () => {
                         options={{ headerShown: false }} 
                   />
                   <Stack.Screen 
-                        name="StartScreen" 
-                        component={StartScreen} 
+                        name="InfoScreen" 
+                        component={InfoScreen} 
                         options={{ headerShown: false }} 
                   />
                   <Stack.Screen 

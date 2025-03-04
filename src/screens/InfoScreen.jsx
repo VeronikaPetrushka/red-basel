@@ -1,10 +1,10 @@
 import { View } from "react-native"
-import Start from "../components/Start"
+import Info from "../components/Info"
 
-const StartScreen = () => {
+const InfoScreen = () => {
     return (
         <View style={styles.container}>
-            <Start />
+            <Info />
         </View>
     )
 }; 
@@ -16,4 +16,4 @@ const styles = {
     }
 }
 
-export default StartScreen;
+export default InfoScreen;

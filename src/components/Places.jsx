@@ -39,7 +39,7 @@ const Places = () => {
 
                 <Text style={styles.title}>Places encyclopedia </Text>
 
-                {/* <ScrollView style={{width: '100%'}}> */}
+                <ScrollView style={{width: '100%'}}>
                     {
                         places.map((place, index) => (
                             <View key={index} style={styles.card}>
@@ -65,7 +65,7 @@ const Places = () => {
                         ))
                     }
                     <View style={{height: 120}} />
-                {/* </ScrollView> */}
+                </ScrollView>
 
                 <Modal
                     visible={modalVisible}

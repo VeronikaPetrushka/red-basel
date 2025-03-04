@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 
 const { height } = Dimensions.get('window');
 
-const Start = () => {
+const Info = () => {
     const navigation = useNavigation();
     const [index, setIndex] = useState(0);  
 
@@ -13,7 +13,7 @@ const Start = () => {
         setIndex((prevIndex) => (prevIndex + 1) % 3);
 
         if(index === 2) {
-            navigation.navigate('HomeScreen')
+            navigation.navigate('HomScreen')
         }
     };    
 
@@ -23,7 +23,7 @@ const Start = () => {
 
                 <View style={{width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', zIndex: 10}}>
                     <Image source={require('../assets/decor/logo.png')} style={{width: 144, height: 40, resizeMode: 'contain'}} />
-                    <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('HomScreen')}>
                         <Text style={styles.skipText}>S k i p</Text>
                     </TouchableOpacity>
                 </View>    
@@ -178,4 +178,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default Start;
+export default Info;
