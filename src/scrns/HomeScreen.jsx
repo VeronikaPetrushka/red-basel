@@ -23,7 +23,7 @@ const styles = {
         bottom: 15,
         left: 0,
         right: 0,
-        // zIndex: 10
+        zIndex: 10
     }
 }
 

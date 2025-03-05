@@ -136,7 +136,7 @@ const CreateHike = () => {
                                 <Marker coordinate={marker} />
                             </MapView>
 
-                            <ScrollView style={{width: '100%', paddingHorizontal: 35, marginTop: -30}}>
+                            <ScrollView style={{width: '100%', paddingHorizontal: 35, marginTop: 20}}>
                                 <Text style={styles.title}>Add plan you hike</Text>
 
                                 <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack('')}>
@@ -219,7 +219,6 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        paddingTop: height * 0.07,
         backgroundColor: '#8f0307'
     },
 

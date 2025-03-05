@@ -22,7 +22,8 @@ const styles = {
         position: 'absolute',
         bottom: 15,
         left: 0,
-        right: 0
+        right: 0,
+        zIndex: 10
     }
 }
 

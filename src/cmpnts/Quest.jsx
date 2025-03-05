@@ -99,7 +99,7 @@ const Quest = () => {
                             index === 0 && (
                                 <>
                                     <Text style={[styles.title, {position: 'absolute',  bottom: height > 700 ? height * 0.3 : height * 0.34, alignSelf: 'center'}]}>Try to visit all the places</Text>
-                                    <Text style={[styles.title, {opacity: 0.5, position: 'absolute', bottom: height > 700 ? height * 0.25 : height * 0.24, alignSelf: 'center', textAlign: height > 700 ? 'center' : 'right'}]}>And discover all the locations</Text>
+                                    <Text style={[styles.title, {opacity: 0.5, position: 'absolute', bottom: height > 700 ? height * 0.23 : height * 0.24, alignSelf: 'center', textAlign: height > 700 ? 'center' : 'right'}]}>And discover all the locations</Text>
                                 </>
                             )
                         }
