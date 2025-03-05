@@ -46,9 +46,9 @@ const Home = () => {
         fetchHikes();
     }, []);
 
-    const items = type === 'plan' ? planned : history;
+    const items = (type === "plan" ? planned : history) || [];
 
-    const hasHikes = (type === 'plan' ? planned.length > 0 : history.length > 0);
+    const hasHikes = items.length > 0;
 
     return (
             <View style={styles.container}>
@@ -56,27 +56,32 @@ const Home = () => {
                 <Text style={styles.title}>Home</Text>
 
                 <View style={{ width: '100%', height: 140, borderRadius: 12, overflow: 'hidden', alignSelf: 'center', marginBottom: 20}}>
-                    <MapView
-                        style={{ width: '100%', height: '100%' }}
-                        initialRegion={region}
-                    >
-                        {items.length > 0 ? (
-                            items.map((item, index) => (
-                                <Marker
-                                    key={index}
-                                    coordinate={{
-                                        latitude: item.location.latitude,
-                                        longitude: item.location.longitude,
-                                    }}
-                                    title={item.name}
-                                    description={item.address}
-                                />
-                            ))
-                        ) : null}
-                    </MapView>
+                    {hasHikes && (
+                        <>
+                            <View style={{ width: '100%', height: 140, borderRadius: 12, overflow: 'hidden', alignSelf: 'center', marginBottom: 20 }}>
+                                <MapView
+                                    style={{ width: '100%', height: '100%' }}
+                                    initialRegion={region}
+                                >
+                                    {items.map((item, index) => (
+                                        item?.location ? (
+                                            <Marker
+                                                key={index}
+                                                coordinate={{
+                                                    latitude: item.location.latitude,
+                                                    longitude: item.location.longitude,
+                                                }}
+                                                title={item.name || "Unknown Location"}
+                                                description={item.address || ""}
+                                            />
+                                        ) : null
+                                    ))}
+                                </MapView>
+                            </View>
+                            <Text style={[styles.subTitle, {textAlign: 'right'}]}>Map</Text>
+                        </>
+                    )}
                 </View>
-
-                <Text style={[styles.subTitle, {textAlign: 'right'}]}>Map</Text>
 
                 <View style={{width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 25, zIndex: 10}}>
                     <TouchableOpacity 
