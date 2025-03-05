@@ -1,6 +1,6 @@
 const places = [
     {
-        image: require('../assets/places/1.png'),
+        image: require('../ass/places/1.png'),
         name: 'Basel Cathedral',
         description: 'Basel Cathedral (German: Basler Münster) is one of the most prominent landmarks of Basel, Switzerland. This majestic cathedral, located on a hill by the banks of the Rhine, is a striking example of Gothic and Romanesque architecture. Its history, beauty and cultural significance make it an important point of attraction for tourists and locals alike.',
         context: [
@@ -19,7 +19,7 @@ const places = [
         ]
     },
     {
-        image: require('../assets/places/2.png'),
+        image: require('../ass/places/2.png'),
         name: 'Spalentor Gate',
         description: 'Spalentor, or Spalentor, is one of the main medieval gates of Basel, Switzerland, and one of the city`s most famous landmarks. Part of the historic city wall, this gate has been preserved since the 14th century and serves as a vivid reminder of the city`s rich past.',
         context: [
@@ -38,7 +38,7 @@ const places = [
         ]
     },
     {
-        image: require('../assets/places/3.png'),
+        image: require('../ass/places/3.png'),
         name: 'Basel Zoo',
         description: 'The Basel Zoo (Zoo Basel, also known as “Zolli”) is the oldest zoo in Switzerland and one of the most popular zoos in Europe. Founded in 1874, it is located in the center of Basel and attracts more than 2 million visitors each year. The zoo is known for its rich history, modern infrastructure and impressive variety of animals.',
         context: [
@@ -53,7 +53,7 @@ const places = [
         ]
     },
     {
-        image: require('../assets/places/4.png'),
+        image: require('../ass/places/4.png'),
         name: 'Basel Art Museum',
         description: 'The Kunstmuseum Basel is one of the oldest and most important art museums in Switzerland and Europe. Located in the city of Basel, it is famous for its rich art collection, spanning from the Middle Ages to the present day. In 2013, UNESCO recognized the museum`s collection as a World Heritage Site.',
         context: [
@@ -72,7 +72,7 @@ const places = [
         ]
     },
     {
-        image: require('../assets/places/5.png'),
+        image: require('../ass/places/5.png'),
         name: 'Basel Museum of Antiquities',
         description: 'The Antiquities Museum Basel und Sammlung Ludwig (Antikenmuseum Basel und Sammlung Ludwig) is one of the largest and most famous museums of ancient art in Switzerland. It is located in the center of Basel and is dedicated to the art and culture of the ancient civilizations of the Mediterranean, Middle East and Egypt.',
         context: [

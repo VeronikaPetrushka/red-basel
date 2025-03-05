@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, ScrollView, Modal } from "react-native"
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import LinearGradient from "react-native-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 import MapView, { Marker } from "react-native-maps";
 
@@ -52,7 +51,6 @@ const Home = () => {
     const hasHikes = (type === 'plan' ? planned.length > 0 : history.length > 0);
 
     return (
-        <LinearGradient colors={["#000", "#300202"]} style={{width: '100%', height: '100%'}}>
             <View style={styles.container}>
 
                 <Text style={styles.title}>Home</Text>
@@ -109,7 +107,7 @@ const Home = () => {
                             <Text style={[styles.noText, {textAlign: 'right', marginRight: 30, marginTop: 50}]}>Add the first event</Text>
                             <Text style={[styles.noText, {textAlign: 'right'}]}>While your place is empty</Text>
 
-                            <Image source={require('../assets/decor/left-guy.png')} style={styles.guyImg} />
+                            <Image source={require('../ass/decor/left-guy.png')} style={styles.guyImg} />
 
                             <TouchableOpacity 
                                 style={[styles.noCreateBtn, 
@@ -138,7 +136,7 @@ const Home = () => {
                                             <Text style={styles.hikeName}>{item.name}</Text>
                                             <Text style={styles.hikeDetails}>{formattedDate}</Text>
                                             <Text style={styles.hikeDetails}>{formattedTime}</Text>
-                                            <Image source={require('../assets/decor/right-guy.png')} style={{width: '100%', height: 120, position: 'absolute', bottom: 0, right: 0}} />
+                                            <Image source={require('../ass/decor/right-guy.png')} style={{width: '100%', height: 120, position: 'absolute', bottom: 0, right: 0}} />
                                         </View>
                                         <Text style={styles.hikeAddress}>{item.address}</Text>
                                     </View>
@@ -159,16 +157,15 @@ const Home = () => {
                     <View style={styles.modalContainer}>
                         <Text style={styles.title}>Hello, dear user!</Text>
                         <Text style={[styles.title, {textDecorationLine: 'underline', alignSelf: 'flex-end'}]}>My name is Martin.</Text>
-                        <Image source={require('../assets/decor/big-guy.png')} style={{width: '100%', height: '100%', resizeMode: 'contain', position: 'absolute'}} />
+                        <Image source={require('../ass/decor/big-guy.png')} style={{width: '100%', height: '100%', resizeMode: 'contain', position: 'absolute'}} />
                         <Text style={[styles.title, {position: 'absolute', top: height - height * 0.24, alignSelf: 'center'}]}>I'm your guide to the app</Text>
                         <TouchableOpacity onPress={() => setModalVisible(false)}>
-                            <Image source={require('../assets/decor/big-arrow.png')} style={{width: 102, height: 50, resizeMode: 'contain', position: 'absolute', top: height - height * 0.35, alignSelf: 'center'}} />
+                            <Image source={require('../ass/decor/big-arrow.png')} style={{width: 102, height: 50, resizeMode: 'contain', position: 'absolute', top: height - height * 0.35, alignSelf: 'center'}} />
                         </TouchableOpacity>
                     </View>
                 </Modal>
 
             </View>
-        </LinearGradient>
     )
 };
 
@@ -178,6 +175,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: height * 0.07,
         paddingHorizontal: 35,
+        backgroundColor: '#8f0307'
     },
 
     title: {
@@ -249,7 +247,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderRadius: 12,
         position: 'absolute', 
-        // bottom: height * 0.18,
         right: 30,
         zIndex: 10
     },
@@ -303,7 +300,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: height * 0.07,
         paddingHorizontal: 35,
-        backgroundColor: "rgba(0, 0, 0, 0.95)"
+        backgroundColor: "rgba(143, 3, 7, 0.95)"
     },
 
 })

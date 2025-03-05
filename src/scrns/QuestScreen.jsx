@@ -1,11 +1,11 @@
 import { View } from "react-native"
-import Settings from "../components/Settings"
-import Menu from "../components/Menu";
+import Quest from "../cmpnts/Quest"
+import Menu from "../cmpnts/Menu";
 
-const SettingsScreen = () => {
+const QuestScreen = () => {
     return (
         <View style={styles.container}>
-            <Settings />
+            <Quest />
             <View style={styles.menu}>
                 <Menu />
             </View>
@@ -26,4 +26,4 @@ const styles = {
     }
 }
 
-export default SettingsScreen;
+export default QuestScreen;

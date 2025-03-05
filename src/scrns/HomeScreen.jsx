@@ -1,6 +1,6 @@
 import { View } from "react-native"
-import Home from "../components/Home"
-import Menu from "../components/Menu";
+import Home from "../cmpnts/Home"
+import Menu from "../cmpnts/Menu";
 
 const HomeScreen = () => {
     return (
@@ -22,7 +22,8 @@ const styles = {
         position: 'absolute',
         bottom: 15,
         left: 0,
-        right: 0
+        right: 0,
+        // zIndex: 10
     }
 }
 

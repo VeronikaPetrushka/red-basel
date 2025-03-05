@@ -1,6 +1,6 @@
 import { View } from "react-native"
-import Places from "../components/Places"
-import Menu from "../components/Menu";
+import Places from "../cmpnts/Places"
+import Menu from "../cmpnts/Menu";
 
 const PlacesScreen = () => {
     return (

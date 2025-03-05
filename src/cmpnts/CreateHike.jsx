@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, TextInput, Alert, ScrollView, Image } from "react-native"
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import DateTimePicker from "@react-native-community/datetimepicker";
-import LinearGradient from "react-native-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 import MapView, { Marker } from "react-native-maps";
 
@@ -112,7 +111,6 @@ const CreateHike = () => {
     }
 
     return (
-        <LinearGradient colors={["#000", "#300202"]} style={{width: '100%', height: '100%'}}>
             <View style={styles.container}>
 
                 {
@@ -120,7 +118,7 @@ const CreateHike = () => {
                         <View style={{width: '100%', flexGrow: 1, paddingHorizontal: 35}}>
                             <Text style={styles.title}>Complete!</Text>
                             <Text style={[styles.title, {fontSize: 20, opacity: 0.5, textAlign: 'center', marginTop: height * 0.05}]}>You can look in current or later in history</Text>
-                            <Image source={require('../assets/decor/big-guy.png')} style={{width: '100%', height: height * 0.6, resizeMode: 'contain'}} />
+                            <Image source={require('../ass/decor/big-guy.png')} style={{width: '100%', height: height * 0.6, resizeMode: 'contain'}} />
                             <TouchableOpacity 
                                 style={styles.nextBtn}
                                 onPress={() => navigation.navigate('HomeScreen')}
@@ -214,7 +212,6 @@ const CreateHike = () => {
                 }
 
             </View>
-        </LinearGradient>
     )
 };
 
@@ -223,6 +220,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: height * 0.07,
+        backgroundColor: '#8f0307'
     },
 
     title: {

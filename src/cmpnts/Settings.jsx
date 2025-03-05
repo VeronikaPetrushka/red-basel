@@ -1,5 +1,4 @@
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Linking } from "react-native"
-import LinearGradient from "react-native-linear-gradient";
 import Icons from "./Icons";
 
 const { height } = Dimensions.get('window');
@@ -17,7 +16,6 @@ const Settings = () => {
     };    
 
     return (
-        <LinearGradient colors={["#000", "#300202"]} style={{width: '100%', height: '100%'}}>
             <View style={styles.container}>
 
             <Text style={styles.title}>Settings</Text>
@@ -38,7 +36,6 @@ const Settings = () => {
             </View>
 
             </View>
-        </LinearGradient>
     )
 };
 
@@ -48,6 +45,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: height * 0.07,
         paddingHorizontal: 35,
+        backgroundColor: '#8f0307'
     },
 
     title: {

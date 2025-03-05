@@ -1,12 +1,12 @@
 import { View } from "react-native"
-import Read from "../components/Read"
+import MarkPlace from "../cmpnts/MarkPlace"
 
-const ReadScreen = ({ route }) => {
-    const { place } = route.params;
+const MarkPlaceScreen = ({ route }) => {
+    const { quest } = route.params;
 
     return (
         <View style={styles.container}>
-            <Read place={place} />
+            <MarkPlace quest={quest} />
         </View>
     )
 }; 
@@ -18,4 +18,4 @@ const styles = {
     }
 }
 
-export default ReadScreen;
+export default MarkPlaceScreen;

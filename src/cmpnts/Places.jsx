@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react"
 import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, ScrollView , Modal} from "react-native"
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import LinearGradient from "react-native-linear-gradient";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
-import places from "../constants/places";
+import places from "../const/places";
 
 const { height } = Dimensions.get('window');
 
@@ -34,7 +33,6 @@ const Places = () => {
     }, []);
 
     return (
-        <LinearGradient colors={["#000", "#300202"]} style={{width: '100%', height: '100%'}}>
             <View style={styles.container}>
 
                 <Text style={styles.title}>Places encyclopedia </Text>
@@ -78,9 +76,9 @@ const Places = () => {
                         <Text style={[styles.title, {opacity: 0.5, fontSize: 20}]}>There will be interesting places in the city of Basel</Text>
                         <Text style={[styles.title, {opacity: 0.5, fontSize: 20}]}>Interesting facts about them</Text>
                         <Text style={[styles.title, {opacity: 0.5, fontSize: 20}]}>And much more</Text>
-                        <Image source={require('../assets/decor/left-guy.png')} style={{width: 600, height: 700, resizeMode: 'contain', position: 'absolute', top: 100, left: -90}} />
+                        <Image source={require('../ass/decor/left-guy.png')} style={{width: 600, height: 700, resizeMode: 'contain', position: 'absolute', top: 100, left: -90}} />
                         <Text  style={[styles.title, {marginTop: 80, alignSelf: 'flex-end'}]}>What's there ?</Text>
-                        <Image source={require('../assets/decor/arrow.png')} style={{width: '100%', height: 745, resizeMode: 'contain', position: 'absolute', top: 270, right: 0}} />
+                        <Image source={require('../ass/decor/arrow.png')} style={{width: '100%', height: 745, resizeMode: 'contain', position: 'absolute', top: 270, right: 0}} />
                         <TouchableOpacity 
                             style={styles.nextBtn}
                             onPress={() => setModalVisible(false)}
@@ -91,7 +89,6 @@ const Places = () => {
                 </Modal>
 
             </View>
-        </LinearGradient>
     )
 };
 
@@ -101,6 +98,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: height * 0.07,
         paddingHorizontal: 35,
+        backgroundColor: '#8f0307'
     },
 
     title: {
@@ -155,7 +153,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: height * 0.07,
         paddingHorizontal: 35,
-        backgroundColor: "rgba(0, 0, 0, 0.95)"
+        backgroundColor: "rgba(143, 3, 7, 0.95)"
     },
 
     nextBtn: {

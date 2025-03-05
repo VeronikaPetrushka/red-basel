@@ -1,18 +1,17 @@
 import React, { useEffect } from 'react';
 import { View, Image, Animated } from 'react-native';
-import LinearGradient from "react-native-linear-gradient";
 import { enableScreens } from 'react-native-screens';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import InfoScreen from './src/screens/InfoScreen';
-import HomeScreen from './src/screens/HomeScreen';
-import CreateHikeScreen from './src/screens/CreateHikeScreen';
-import PlacesScreen from './src/screens/PlacesScreen';
-import ReadScreen from './src/screens/ReadScreen';
-import SettingsScreen from './src/screens/SettingsScreen';
-import QuestScreen from './src/screens/QuestScreen';
-import MarkPlaceScreen from './src/screens/MarkPlaceScreen';
+import InfoScreen from './src/scrns/InfoScreen';
+import HomeScreen from './src/scrns/HomeScreen';
+import CreateHikeScreen from './src/scrns/CreateHikeScreen';
+import PlacesScreen from './src/scrns/PlacesScreen';
+import ReadScreen from './src/scrns/ReadScreen';
+import SettingsScreen from './src/scrns/SettingsScreen';
+import QuestScreen from './src/scrns/QuestScreen';
+import MarkPlaceScreen from './src/scrns/MarkPlaceScreen';
 
 enableScreens();
 
@@ -32,8 +31,8 @@ const SplashScreen = ({ navigation }) => {
       }, []);
   
       return (
-          <LinearGradient colors={["#000", "#300202"]} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-              <Image source={require('./src/assets/decor/logo-white.png')} style={{ width: 290, height: 77, resizeMode: 'contain', marginBottom: 30 }} />
+          <View style={{ flex: 1, backgroundColor: '#8f0307', justifyContent: 'center', alignItems: 'center' }}>
+              <Image source={require('./src/ass/decor/logo-white.png')} style={{ width: 290, height: 77, resizeMode: 'contain', marginBottom: 30 }} />
               
               <View style={{ width: '85%', height: 24, backgroundColor: 'rgba(255, 255, 255, 0.2)', borderRadius: 24, overflow: 'hidden' }}>
                   <Animated.View style={{
@@ -42,7 +41,7 @@ const SplashScreen = ({ navigation }) => {
                       backgroundColor: '#cf0000',
                   }} />
               </View>
-          </LinearGradient>
+          </View>
       );
   };
 

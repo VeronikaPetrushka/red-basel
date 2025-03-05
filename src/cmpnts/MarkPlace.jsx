@@ -3,7 +3,6 @@ import { View, Text, TouchableOpacity, StyleSheet, Dimensions, TextInput, Alert,
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { launchImageLibrary } from "react-native-image-picker";
-import LinearGradient from "react-native-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 
 const { height } = Dimensions.get('window');
@@ -90,7 +89,6 @@ const MarkPlace = ({ quest }) => {
     };
     
     return (
-        <LinearGradient colors={["#000", "#300202"]} style={{width: '100%', height: '100%'}}>
             <View style={styles.container}>
 
                 <ScrollView style={{width: '100%', paddingHorizontal: 35}}>
@@ -104,7 +102,7 @@ const MarkPlace = ({ quest }) => {
                     <TouchableOpacity style={styles.imageContainer} onPress={imageUpload}>
                         {
                             image ? <Image source={{uri: image}} style={{width: '100%', height: '100%', resizeMode: 'cover'}} />
-                            : <Image source={require('../assets/decor/image.png')} style={{width: 72, height: 72}} />
+                            : <Image source={require('../ass/decor/image.png')} style={{width: 72, height: 72}} />
                         }
                     </TouchableOpacity>
 
@@ -173,7 +171,6 @@ const MarkPlace = ({ quest }) => {
                 </Modal>
 
             </View>
-        </LinearGradient>
     )
 };
 
@@ -277,7 +274,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: height * 0.07,
         paddingHorizontal: 35,
-        backgroundColor: "rgba(0, 0, 0, 0.95)",
+        backgroundColor: "rgba(143, 3, 7, 0.95)",
         alignItems: 'center',
         justifyContent: 'space-evenly'
     },

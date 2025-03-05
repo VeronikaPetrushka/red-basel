@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react"
 import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, ScrollView , Modal} from "react-native"
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import LinearGradient from "react-native-linear-gradient";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
-import quest from "../constants/quest";
+import quest from "../const/quest";
 
 const { height } = Dimensions.get('window');
 
@@ -51,16 +50,15 @@ const Quest = () => {
 
     const getImageSource = (status) => {
         if (status?.completed) {
-            return require('../assets/quest/completed.png');
+            return require('../ass/quest/completed.png');
         } else if (status?.current) {
-            return require('../assets/quest/current.png');
+            return require('../ass/quest/current.png');
         } else {
-            return require('../assets/quest/locked.png');
+            return require('../ass/quest/locked.png');
         }
     };
 
     return (
-        <LinearGradient colors={["#000", "#300202"]} style={{width: '100%', height: '100%'}}>
             <View style={styles.container}>
 
                 <Text style={styles.title}>Game-quest</Text>
@@ -83,7 +81,7 @@ const Quest = () => {
                     </View>
                     <View style={{width: '100%', borderColor: '#fff', borderWidth: 2, borderStyle: 'dashed', marginVertical: 20}} />
                     <Text style={[styles.title, {fontSize: 32, lineHeight: 36, marginBottom: 20, textAlign: 'center'}]}>Finish</Text>
-                    <Image source={require('../assets/quest/guy.png')} style={{width: '100%', resizeMode: 'contain'}} />
+                    <Image source={require('../ass/quest/guy.png')} style={{width: '100%', resizeMode: 'contain'}} />
                     <View style={{height: 120}} />
                 </ScrollView>
 
@@ -96,7 +94,7 @@ const Quest = () => {
                     <View style={styles.modalContainer}>
                         <Text style={styles.title}>Game-quest</Text>
                         <Text style={[styles.title, {fontSize: 32, lineHeight: 36, textAlign: 'center'}]}>It's a quest game!</Text>
-                        <Image source={require('../assets/decor/left-guy.png')} style={{width: 600, height: 700, resizeMode: 'contain', position: 'absolute', top: 0, left: -90}} />
+                        <Image source={require('../ass/decor/left-guy.png')} style={{width: 600, height: 700, resizeMode: 'contain', position: 'absolute', top: 0, left: -90}} />
                         {
                             index === 0 && (
                                 <>
@@ -108,7 +106,7 @@ const Quest = () => {
                         {
                             index === 1 && (
                                 <>
-                                    <Image source={require('../assets/decor/quest-route.png')} style={{width: '100%', height: '100%', resizeMode: 'contain', position: 'absolute', top: 50, right: 0}} />
+                                    <Image source={require('../ass/decor/quest-route.png')} style={{width: '100%', height: '100%', resizeMode: 'contain', position: 'absolute', top: 50, right: 0}} />
                                     <Text style={[styles.title, {position: 'absolute', bottom: height > 700 ? height * 0.42 : height * 0.4, right: -20, alignSelf: 'flex-end', width: '80%'}]}>Open new locations gradually</Text>
                                     <Text style={[styles.title, {opacity: 0.5, position: 'absolute', bottom: height > 700 ? height * 0.22 : height * 0.2, alignSelf: 'center'}]}>It's interesting and fun!</Text>
                                 </>
@@ -135,7 +133,6 @@ const Quest = () => {
                 </Modal>
 
             </View>
-        </LinearGradient>
     )
 };
 
@@ -145,6 +142,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: height * 0.07,
         paddingHorizontal: 35,
+        backgroundColor: '#8f0307'
     },
 
     title: {
@@ -172,7 +170,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: height * 0.07,
         paddingHorizontal: 35,
-        backgroundColor: "rgba(0, 0, 0, 0.95)"
+        backgroundColor: "rgba(143, 3, 7, 0.95)"
     },
 
     nextBtn: {

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions } from "react-native"
-import LinearGradient from "react-native-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 
 const { height } = Dimensions.get('window');
@@ -13,17 +12,16 @@ const Info = () => {
         setIndex((prevIndex) => (prevIndex + 1) % 3);
 
         if(index === 2) {
-            navigation.navigate('HomScreen')
+            navigation.navigate('HomeScreen')
         }
     };    
 
     return (
-        <LinearGradient colors={["#000", "#300202"]} style={{width: '100%', height: '100%'}}>
             <View style={styles.container}>
 
                 <View style={{width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', zIndex: 10}}>
-                    <Image source={require('../assets/decor/logo.png')} style={{width: 144, height: 40, resizeMode: 'contain'}} />
-                    <TouchableOpacity onPress={() => navigation.navigate('HomScreen')}>
+                    <Image source={require('../ass/decor/logo.png')} style={{width: 144, height: 40, resizeMode: 'contain'}} />
+                    <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}>
                         <Text style={styles.skipText}>S k i p</Text>
                     </TouchableOpacity>
                 </View>    
@@ -32,24 +30,24 @@ const Info = () => {
                     index === 0 &&
                     (
                         <>
-                            <Image source={require('../assets/guide/1/map.png')} style={{width: 326, height: height * 0.14, position: 'absolute', top: height * 0.18, left: -70, resizeMode: 'contain'}} />
-                            <Image source={require('../assets/guide/1/item.png')} style={{width: 326, height: height * 0.14, position: 'absolute', top: height * 0.35, right: 35, resizeMode: 'contain'}} />
+                            <Image source={require('../ass/guide/1/map.png')} style={{width: 326, height: height * 0.14, position: 'absolute', top: height * 0.18, left: -70, resizeMode: 'contain'}} />
+                            <Image source={require('../ass/guide/1/item.png')} style={{width: 326, height: height * 0.14, position: 'absolute', top: height * 0.35, right: 35, resizeMode: 'contain'}} />
                         </>
                     )
                 }
                 {
                     index === 1 && (
                         <>
-                            <Image source={require('../assets/decor/left-guy.png')} style={{width: 326, height: '100%', position: 'absolute', top: -100, left: 0, resizeMode: 'contain'}} />
-                            <Image source={require('../assets/decor/mini-quest.png')} style={{width: 326, height: '100%', position: 'absolute', top: -150, right: 35, resizeMode: 'contain'}} />
+                            <Image source={require('../ass/decor/left-guy.png')} style={{width: 326, height: '100%', position: 'absolute', top: -100, left: 0, resizeMode: 'contain'}} />
+                            <Image source={require('../ass/decor/mini-quest.png')} style={{width: 326, height: '100%', position: 'absolute', top: -150, right: 35, resizeMode: 'contain'}} />
                         </>
                     )
                 }
                 {
                     index === 2 && (
                         <>
-                            <Image source={require('../assets/guide/3/right.png')} style={{width: 342, height: height * 0.23, position: 'absolute', top: height * 0.15, right: -100, resizeMode: 'contain'}} />
-                            <Image source={require('../assets/guide/3/left.png')} style={{width: 342, height: height * 0.23, position: 'absolute', top: height * 0.27, left: -100, resizeMode: 'contain'}} />
+                            <Image source={require('../ass/guide/3/right.png')} style={{width: 342, height: height * 0.23, position: 'absolute', top: height * 0.15, right: -100, resizeMode: 'contain'}} />
+                            <Image source={require('../ass/guide/3/left.png')} style={{width: 342, height: height * 0.23, position: 'absolute', top: height * 0.27, left: -100, resizeMode: 'contain'}} />
                         </>
                     )
                 }
@@ -73,7 +71,7 @@ const Info = () => {
                         }
                     </Text>
 
-                    <View style={styles.dotsContainer}>
+                    <View style={styles.dotsBox}>
                         {[0, 1, 2].map((dot) => (
                             <View 
                                 key={dot}
@@ -91,7 +89,6 @@ const Info = () => {
                 </View>
                     
             </View>
-        </LinearGradient>
     )
 };
 
@@ -101,7 +98,8 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         paddingTop: height * 0.07,
-        paddingHorizontal: 35
+        paddingHorizontal: 35,
+        backgroundColor: '#8f0307'
     },
 
     skipText: {
@@ -135,7 +133,7 @@ const styles = StyleSheet.create({
         lineHeight: 21
     },
 
-    dotsContainer: {
+    dotsBox: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',

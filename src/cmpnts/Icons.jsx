@@ -8,23 +8,23 @@ const Icons = ({ type, active }) => {
 
   switch (type) {
     case '1':
-      imageSource = require('../assets/routes/1.png');
+      imageSource = require('../ass/routes/1.png');
       active && iconStyle.push(styles.active);
       break;
     case '2':
-      imageSource = require('../assets/routes/2.png');
+      imageSource = require('../ass/routes/2.png');
       active && iconStyle.push(styles.active);
       break;
     case '3':
-      imageSource = require('../assets/routes/3.png');
+      imageSource = require('../ass/routes/3.png');
       active && iconStyle.push(styles.active);
       break;
     case '4':
-      imageSource = require('../assets/routes/4.png');
+      imageSource = require('../ass/routes/4.png');
       active && iconStyle.push(styles.active);
       break;
     case 'arrow':
-      imageSource = require('../assets/icons/arrow.png');
+      imageSource = require('../ass/icons/arrow.png');
       break;
   }
 

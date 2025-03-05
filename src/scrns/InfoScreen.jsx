@@ -1,10 +1,10 @@
 import { View } from "react-native"
-import CreateHike from "../components/CreateHike"
+import Info from "../cmpnts/Info"
 
-const CreateHikeScreen = () => {
+const InfoScreen = () => {
     return (
         <View style={styles.container}>
-            <CreateHike />
+            <Info />
         </View>
     )
 }; 
@@ -16,4 +16,4 @@ const styles = {
     }
 }
 
-export default CreateHikeScreen;
+export default InfoScreen;

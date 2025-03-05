@@ -1,14 +1,10 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, ScrollView } from "react-native"
-import LinearGradient from "react-native-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
-
-const { height } = Dimensions.get('window');
 
 const Read = ({ place }) => {
     const navigation = useNavigation();
 
     return (
-        <LinearGradient colors={["#000", "#300202"]} style={{width: '100%', height: '100%'}}>
             <View style={styles.container}>
 
                 <View style={{width: '100%', borderBottomLeftRadius: 24, borderBottomRightRadius: 24, overflow: 'hidden', marginBottom: 29}}>
@@ -45,7 +41,6 @@ const Read = ({ place }) => {
                 </ScrollView>
 
             </View>
-        </LinearGradient>
     )
 };
 
@@ -53,6 +48,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
+        backgroundColor: '#8f0307'
     },
 
     image: {
