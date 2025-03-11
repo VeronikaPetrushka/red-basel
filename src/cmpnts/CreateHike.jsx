@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions, TextInput, Alert, ScrollView, Image } from "react-native"
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions, TextInput, Alert, ScrollView, Image, ImageBackground } from "react-native"
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { useNavigation } from "@react-navigation/native";
@@ -111,6 +111,7 @@ const CreateHike = () => {
     }
 
     return (
+        <ImageBackground source={require('../ass/back/2.png')} style={{flex: 1}}>
             <View style={styles.container}>
 
                 {
@@ -212,6 +213,7 @@ const CreateHike = () => {
                 }
 
             </View>
+        </ImageBackground>
     )
 };
 
@@ -219,7 +221,6 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#8f0307'
     },
 
     title: {

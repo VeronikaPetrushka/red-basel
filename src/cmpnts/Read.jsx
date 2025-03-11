@@ -1,10 +1,11 @@
-import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, ScrollView } from "react-native"
+import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground, ScrollView } from "react-native"
 import { useNavigation } from "@react-navigation/native";
 
 const Read = ({ place }) => {
     const navigation = useNavigation();
 
     return (
+        <ImageBackground source={require('../ass/back/1.png')} style={{flex: 1}}>
             <View style={styles.container}>
 
                 <View style={{width: '100%', borderBottomLeftRadius: 24, borderBottomRightRadius: 24, overflow: 'hidden', marginBottom: 29}}>
@@ -41,6 +42,7 @@ const Read = ({ place }) => {
                 </ScrollView>
 
             </View>
+        </ImageBackground>
     )
 };
 
@@ -48,7 +50,6 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#8f0307'
     },
 
     image: {

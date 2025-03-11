@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions } from "react-native"
+import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, ImageBackground } from "react-native"
 import { useNavigation } from "@react-navigation/native";
 
 const { height } = Dimensions.get('window');
@@ -17,10 +17,13 @@ const Info = () => {
     };    
 
     return (
+        <ImageBackground source={require('../ass/back/1.png')} style={{flex: 1}}>
             <View style={styles.container}>
 
                 <View style={{width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', zIndex: 10}}>
-                    <Image source={require('../ass/decor/logo.png')} style={{width: 144, height: 40, resizeMode: 'contain'}} />
+                    <View style={{backgroundColor: '#fff', borderRadius: 100, paddingHorizontal: 20}}>
+                        <Image source={require('../ass/decor/logo.png')} style={{width: 144, height: 40, resizeMode: 'contain'}} />
+                    </View>
                     <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}>
                         <Text style={styles.skipText}>S k i p</Text>
                     </TouchableOpacity>
@@ -88,7 +91,8 @@ const Info = () => {
                     </TouchableOpacity>
                 </View>
                     
-            </View>
+                </View>
+        </ImageBackground>
     )
 };
 
@@ -99,7 +103,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingTop: height * 0.07,
         paddingHorizontal: 35,
-        backgroundColor: '#8f0307'
     },
 
     skipText: {

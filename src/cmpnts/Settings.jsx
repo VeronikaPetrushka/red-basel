@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Linking } from "react-native"
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Linking, ImageBackground } from "react-native"
 import Icons from "./Icons";
 
 const { height } = Dimensions.get('window');
@@ -16,26 +16,28 @@ const Settings = () => {
     };    
 
     return (
+        <ImageBackground source={require('../ass/back/2.png')} style={{flex: 1}}>
             <View style={styles.container}>
 
-            <Text style={styles.title}>Settings</Text>
+                <Text style={styles.title}>Settings</Text>
 
-            <View style={{width: '100%', marginVertical: 'auto'}}>
-                <View style={styles.btn}>
-                    <Text style={styles.btnText}>Terms of use</Text>
-                    <TouchableOpacity style={styles.arrowBtn} onPress={openTerms}>
-                        <Icons type={'arrow'} />
-                    </TouchableOpacity>
+                <View style={{width: '100%', marginVertical: 'auto'}}>
+                    <View style={styles.btn}>
+                        <Text style={styles.btnText}>Terms of use</Text>
+                        <TouchableOpacity style={styles.arrowBtn} onPress={openTerms}>
+                            <Icons type={'arrow'} />
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.btn}>
+                        <Text style={styles.btnText}>Rate us</Text>
+                        <TouchableOpacity style={styles.arrowBtn} onPress={rateApp}>
+                            <Icons type={'arrow'} />
+                        </TouchableOpacity>
+                    </View>
                 </View>
-                <View style={styles.btn}>
-                    <Text style={styles.btnText}>Rate us</Text>
-                    <TouchableOpacity style={styles.arrowBtn} onPress={rateApp}>
-                        <Icons type={'arrow'} />
-                    </TouchableOpacity>
-                </View>
-            </View>
 
             </View>
+        </ImageBackground>
     )
 };
 
@@ -45,7 +47,6 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: height * 0.07,
         paddingHorizontal: 35,
-        backgroundColor: '#8f0307'
     },
 
     title: {

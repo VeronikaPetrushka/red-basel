@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react"
-import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, ScrollView , Modal} from "react-native"
+import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, ScrollView , Modal, ImageBackground } from "react-native"
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import places from "../const/places";
@@ -33,6 +33,7 @@ const Places = () => {
     }, []);
 
     return (
+        <ImageBackground source={require('../ass/back/2.png')} style={{flex: 1}}>
             <View style={styles.container}>
 
                 <Text style={styles.title}>Places encyclopedia </Text>
@@ -89,6 +90,7 @@ const Places = () => {
                 </Modal>
 
             </View>
+        </ImageBackground>
     )
 };
 
@@ -98,7 +100,6 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: height * 0.07,
         paddingHorizontal: 35,
-        backgroundColor: '#8f0307'
     },
 
     title: {

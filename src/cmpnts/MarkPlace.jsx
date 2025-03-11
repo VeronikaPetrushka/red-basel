@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions, TextInput, Alert, ScrollView, Image, Modal } from "react-native"
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions, TextInput, Alert, ScrollView, Image, Modal, ImageBackground } from "react-native"
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { launchImageLibrary } from "react-native-image-picker";
@@ -89,6 +89,7 @@ const MarkPlace = ({ quest }) => {
     };
     
     return (
+        <ImageBackground source={require('../ass/back/1.png')} style={{flex: 1}}>
             <View style={styles.container}>
 
                 <ScrollView style={{width: '100%', paddingHorizontal: 35}}>
@@ -171,6 +172,7 @@ const MarkPlace = ({ quest }) => {
                 </Modal>
 
             </View>
+        </ImageBackground>
     )
 };
 
@@ -179,7 +181,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: height * 0.07,
-        backgroundColor: '#8f0307'
     },
 
     title: {
